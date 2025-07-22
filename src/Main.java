@@ -1,25 +1,55 @@
 package src;
-
-import java.util.Random;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Student s = new Student("Sravanthee");
-        Random rand = new Random();
+        Scanner scanner = new Scanner(System.in);
+        StudentManager manager = new StudentManager();
 
-        for (int day = 1; day <= 7; day++) {
-            int codeHrs = rand.nextInt(4);      // 0–3 hours
-            int aptiHrs = rand.nextInt(3);      // 0–2 hours
-            int gitCommits = rand.nextInt(5);   // 0–4 commits
+        while (true) {
+            System.out.println("\n1. Add Student\n2. Display Students\n3. Exit");
+            System.out.print("Enter your choice: ");
+            
+            // Input validation for number
+            String input = scanner.nextLine();
+            int choice;
+            try {
+                choice = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.println("❌ Invalid input! Please enter a number.");
+                continue;
+            }
 
-            s.addCodingHours(codeHrs);
-            s.addAptitudeHours(aptiHrs);
-            s.addGitCommits(gitCommits);
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter name: ");
+                    String name = scanner.nextLine();
 
-            System.out.println("Day " + day + " ➜ Coding: " + codeHrs + " | Aptitude: " + aptiHrs + " | Git: " + gitCommits);
+                    System.out.print("Enter roll number: ");
+                    String roll = scanner.nextLine();
+
+                    System.out.print("Enter skills (comma separated): ");
+                    String[] skills = scanner.nextLine().split(",");
+
+                    List<String> skillList = new ArrayList<>();
+                    for (String skill : skills)
+                        skillList.add(skill.trim());
+
+                    Student s = new Student(name, roll, skillList);
+                    manager.addStudent(s);
+                    break;
+
+                case 2:
+                    manager.displayAllStudents();
+                    break;
+
+                case 3:
+                    System.out.println("🚪 Exiting...");
+                    return;
+
+                default:
+                    System.out.println("❌ Invalid choice! Please enter 1, 2, or 3.");
+            }
         }
-
-        System.out.println("\n📊 Final Weekly Progress:");
-        s.printProgress();
     }
 }
