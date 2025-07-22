@@ -1,17 +1,23 @@
-# Student Skill Tracker (Java + Swing)
+# 🎓 Student Skill Tracker
 
-A simple Java application to track students and their skills. It provides both a **Command-Line Interface (CLI)** and a **Graphical User Interface (GUI)** built using Java Swing.
-
----
-
-## 🔧 Features
-
-- Add students with name, roll number, and multiple skills
-- View student data in a clean table format
-- GUI support using Java Swing
-- Input validation to ensure clean data
+A simple Java GUI + CLI application to manage student names, roll numbers, and their skills. Designed for easy learning and project practice.
 
 ---
 
-## 🗂️ Project Structure
+## 🚀 Features
+- Add students with skills
+- View student skill data in a table
+- User-friendly GUI using `JFrame`
+- CLI support for compilation and running
+
+---
+
+## 📸 Screenshot
+
+Here’s how the Student Skill Tracker GUI looks:
+
+![App Screenshot](image.png)
+
+
+## 📦 Project Structure
 
