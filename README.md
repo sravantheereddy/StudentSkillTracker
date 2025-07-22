@@ -16,7 +16,7 @@ A simple Java GUI + CLI application to manage student names, roll numbers, and t
 
 Here’s how the Student Skill Tracker GUI looks:
 
-![App Screenshot](src/image.png)
+![App Screenshot](image.png)
 
 
 
