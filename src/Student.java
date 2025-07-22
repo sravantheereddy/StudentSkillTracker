@@ -1,4 +1,5 @@
 package src;
+
 import java.util.List;
 
 public class Student {
@@ -12,9 +13,16 @@ public class Student {
         this.skills = skills;
     }
 
-    public void displayInfo() {
-        System.out.println("Name: " + name);
-        System.out.println("Roll Number: " + rollNumber);
-        System.out.println("Skills: " + String.join(", ", skills));
+    // ✅ Getter methods
+    public String getName() {
+        return name;
+    }
+
+    public String getRollNumber() {
+        return rollNumber;
+    }
+
+    public List<String> getSkills() {
+        return skills;
     }
 }
